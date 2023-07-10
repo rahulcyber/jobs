@@ -1,0 +1,51 @@
+.login-page-logo-container {
+  padding: 20px;
+}
+
+.theme-btn-light {
+  display: flex;
+  width: -moz-max-content;
+  width: max-content;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  color: #FFF;
+  border: 2px solid #FFF;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.theme-btn-dark {
+  display: flex;
+  width: -moz-max-content;
+  width: max-content;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  color: #212529;
+  border: 2px solid #212529;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.top-form-heading {
+  text-align: center;
+}
+.top-form-heading h3 {
+  font-size: 25px;
+  color: #000;
+  font-weight: bold;
+  padding-bottom: 8px;
+}
+
+.nav-list {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-list .left-nav {
+  color: white;
+}/*# sourceMappingURL=style.css.map */
