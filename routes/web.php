@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProviderController;
+use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,15 +27,29 @@ Route::group(
             return view('welcome');
         })->name('home');
 
-        Route::get('/dashboard', function () {
-            return view('dashboard');
-        })->middleware(['auth', 'verified'])->name('dashboard');
+        Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'verified']], function () {
+            Route::get('/dashboard', function () {
+                return view('dashboard');
+            })->name('dashboard');
+        });
 
-        Route::middleware('auth')->group(function () {
+        Route::middleware(['auth'])->group(function () {
             Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
             Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
             Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+            Route::middleware(['isProvider'])->name('provider.')->group(function () {
+                Route::get('my-jobs', [ProviderController::class, 'myJobs'])->name('my-jobs');
+                Route::get('add-jobs', [ProviderController::class, 'myJobs'])->name('add-jobs');
+            });
         });
+
+
         require __DIR__ . '/auth.php';
     }
 );
+
+
+Route::get('/offline', function () {
+    return view('offline');
+});

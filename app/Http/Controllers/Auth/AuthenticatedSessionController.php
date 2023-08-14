@@ -29,7 +29,7 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(RouteServiceProvider::HOME);
+        return $this->redirectHandler();
     }
 
     /**
@@ -44,5 +44,23 @@ class AuthenticatedSessionController extends Controller
         $request->session()->regenerateToken();
 
         return redirect('/');
+    }
+
+    /**
+     * Redirect the user to proper page after login.
+     *
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function redirectHandler()
+    {
+        $user = auth()->user();
+
+        if ($user->user_type == 1) {
+            return redirect()->route('dashboard');
+        } elseif ($user->user_type == 2) {
+            return redirect()->route('provider.my-jobs');
+        }
+
+        return redirect()->route('home');
     }
 }

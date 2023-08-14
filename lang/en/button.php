@@ -1,2 +1,6 @@
 <?php
-return ['login' => 'Log in'];
+return [
+    'login' => 'Log in',
+    'close' => 'Close',
+    'save' => 'Save'
+];

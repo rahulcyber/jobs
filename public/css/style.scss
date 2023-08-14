@@ -1,3 +1,23 @@
+$primary-color: #000d47;
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500&display=swap');
+
+.btn-primary {
+    background-color: #4949e4 !important;
+}
+
+.text-primary {
+    color: #4949e4 !important;
+}
+
+a {
+    text-decoration: none;
+
+    &:hover {
+        color: none;
+    }
+}
+
 .login-page-logo-container {
     padding: 20px;
 }
@@ -12,7 +32,7 @@
     border: 2px solid #FFF;
     padding: 5px 10px;
     border-radius: 5px;
-    margin-right:10px;
+    margin-right: 10px;
 }
 
 .theme-btn-dark {
@@ -25,7 +45,7 @@
     border: 2px solid #212529;
     padding: 5px 10px;
     border-radius: 5px;
-    margin-right:10px;
+    margin-right: 10px;
 }
 
 .top-form-heading {
@@ -50,6 +70,47 @@
     }
 
     .right-nav {
-      
+        display: flex;
+    }
+}
+
+
+
+.modal-container {
+    .backdrop-blur {
+        backdrop-filter: blur(8px);
+        background-color: rgba(0, 0, 0, 0.198);
+    }
+
+    .modal-body {
+        padding: 10px;
+    }
+
+    .modal-footer {
+        background-color: #f8f8f8;
+
+        button {
+            text-transform: uppercase;
+        }
+    }
+}
+
+.bg-primary-dark {
+    background-color: $primary-color;
+    color: white;
+}
+
+.notes {
+    padding: 10px;
+    background-color: #ededfc;
+    color: #59595d;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+
+@media (min-width: 640px) {
+    .sm\:max-w-md {
+        max-width: 60vw !important;
     }
 }

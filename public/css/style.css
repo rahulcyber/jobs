@@ -1,3 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500&display=swap");
+.btn-primary {
+  background-color: #4949e4 !important;
+}
+
+.text-primary {
+  color: #4949e4 !important;
+}
+
+a {
+  text-decoration: none;
+}
+a:hover {
+  color: none;
+}
+
 .login-page-logo-container {
   padding: 20px;
 }
@@ -48,4 +64,41 @@
 }
 .nav-list .left-nav {
   color: white;
+}
+.nav-list .right-nav {
+  display: flex;
+}
+
+.modal-container .backdrop-blur {
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+  background-color: rgba(0, 0, 0, 0.198);
+}
+.modal-container .modal-body {
+  padding: 10px;
+}
+.modal-container .modal-footer {
+  background-color: #f8f8f8;
+}
+.modal-container .modal-footer button {
+  text-transform: uppercase;
+}
+
+.bg-primary-dark {
+  background-color: #000d47;
+  color: white;
+}
+
+.notes {
+  padding: 10px;
+  background-color: #ededfc;
+  color: #59595d;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+@media (min-width: 640px) {
+  .sm\:max-w-md {
+    max-width: 60vw !important;
+  }
 }/*# sourceMappingURL=style.css.map */
